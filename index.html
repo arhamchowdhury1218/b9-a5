@@ -12,9 +12,9 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="container mx-auto">
+  <body class="">
     <!-- Navbar -->
-    <header class="interFont">
+    <header class="container mx-auto interFont">
       <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
@@ -67,7 +67,7 @@
     </header>
 
     <!-- End to End travel with P-Paribahan -->
-    <section class="pt-10">
+    <section class="container mx-auto pt-10">
       <div
         class="hero rounded-2xl"
         style="background-image: url(./images/banner.png)"
@@ -79,12 +79,11 @@
             >
               <h1 class="pt-16 ]">End-to-End Travel with</h1>
               <br />
-              <span class="text-green-400">P Paribahan</span>
+              <span class="text-green-400">P-Paribahan</span>
             </div>
 
-            <p class="mb-5 mt-8">
-              Yes, you can run unit tests and view the results directly within
-              the app. The integrated testing features allow for a streamlined .
+            <p class="mb-5 mt-8 interFont font-bold">
+              P Paribahan is a renowned transportation company in Bangladesh, offering reliable and efficient bus services across various routes within the country. With a fleet of well-maintained buses and a commitment to passenger safety and comfort, P Paribahan has earned a strong reputation among travelers.
             </p>
             <button
               class="btn bg-green-400 border-green-700 text-black font-black lg:mb-64 lg:mt-10"
@@ -96,7 +95,7 @@
       </div>
     </section>
     <!-- Best offers for you -->
-    <section class="pt-28">
+    <section class="container mx-auto pt-28">
       <h1 class="font-bold ralewayFont text-5xl text-center">
         Best offers for you
       </h1>
@@ -178,7 +177,7 @@
       </div>
     </section>
 
-    <section class="mt-20 bg-slate-100 rounded-3xl">
+    <section class="container mx-auto mt-20 bg-slate-100 rounded-3xl">
       <div class="flex flex-col items-center">
         <h1 class="ralewayFont text-4xl font-extrabold mt-10">P.H Paribahan</h1>
         <p class="interFont text-gray-400 mt-6 font-bold">
@@ -187,7 +186,7 @@
         </p>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex flex-col lg:flex-row justify-center">
         <!-- First-Card -->
 
         <div class="card bg-white shadow-xl">
@@ -251,7 +250,7 @@
 
         <!-- Divider -->
 
-        <div>
+        <div class="hidden lg:inline">
           <img class="bg-white" src="./images/info-devider.png" alt="" />
         </div>
 
@@ -274,13 +273,17 @@
 
     <!-- Seats plan -->
 
-    <section class="mt-10 grid grid-cols-2">
-      <div class="border rounded-3xl border-gray-500 p-4">
+    <section
+      class="container mx-auto mt-10 grid grid-rows-1 lg:grid-cols-2 border rounded-3xl border-gray-500 gap-5"
+    >
+      <div class="p-4">
         <!-- seat -->
         <h1 class="ralewayFont font-extrabold text-2xl">Select Your Seat</h1>
         <div class="">
-          
-          <div class="mt-6 border border-gray-500 border-dashed flex justify-evenly items-center">
+          <!-- Available and selected div -->
+          <div
+            class="mt-6 border border-gray-500 rounded-2xl border-dashed flex justify-evenly items-center"
+          >
             <div class="p-4 gap-3 flex">
               <img src="./images/seat-gray.png" alt="" />
               <p>Available</p>
@@ -291,13 +294,196 @@
               <p>Selected</p>
             </div>
           </div>
+
+          <div class="grid grid-cols-5 mt-5 gap-3 items-center">
+            <p>A</p>
+            <button onclick="seatButton()" id="A1" class="btn btn-success">A1</button>
+            <button id="A2" class="btn btn-success">A2</button>
+            <button id="A3" class="btn btn-success">A3</button>
+            <button id="A4" class="btn btn-success">A4</button>
+            <p>B</p>            
+            <button id="B1" class="btn btn-success">B1</button>
+            <button id="B2" class="btn btn-success">B2</button>
+            <button id="B3" class="btn btn-success">B3</button>
+            <button id="B4" class="btn btn-success">B4</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div>
+        <h1 class="ralewayFont font-extrabold text-2xl p-4">
+          Select Your Seat
+        </h1>
+
+        <div class="overflow-x-auto">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th>Seat <button class="btn btn-success">Info</button></th>
+                <th>Class</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <th>1</th>
+                <td>B1</td>
+                <td>Economy</td>
+                <td>550</td>
+              </tr>
+              <!-- row 2 -->
+              <tr>
+                <th>2</th>
+                <td>B1</td>
+                <td>Economy</td>
+                <td>550</td>
+              </tr>
+              <!-- row 3 -->
+              <tr>
+                <th>3</th>
+                <td>B1</td>
+                <td>Economy</td>
+                <td>550</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+
+          <div class="flex justify-around items-center">
+            <p>Total Price</p>
+            <p>BDT-1100</p>
+          </div>
+
+          <div
+            class="flex justify-evenly mt-7 border border-gray-500 rounded-2xl m-2"
+          >
+            <input
+              type="text"
+              placeholder="Do you have any coupon?"
+              class="w-full max-w-xs"
+            />
+            <button class="btn btn-success w-1/6">Apply</button>
+          </div>
+
+          <div class="font-extrabold flex justify-around">
+            <p>Grand Total</p>
+            <p>BDT 1100</p>
+          </div>
         </div>
 
-        <!-- form -->
-        <div></div>
+        <div class="mt-8 mr-3">
+          <!-- Passengers Name -->
+          <div>
+            <p class="text-2xl font-extrabold">Passenger Name*</p>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="input input-bordered w-full"
+            />
+          </div>
+          <div class="mt-8">
+            <p class="text-2xl font-extrabold">Phone Number*</p>
+            <input
+              type="text"
+              placeholder="Enter your phone number"
+              class="input input-bordered w-full"
+            />
+          </div>
+          <div class="mt-8">
+            <p class="text-2xl font-extrabold">Email ID</p>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="input input-bordered w-full"
+            />
+          </div>
+        </div>
+
+        <button class="btn btn-active btn-accent w-full mt-3">Next</button>
+
+        <div class="flex justify-evenly mt-4 mb-10">
+          <div>
+            <p class="text-gray-500">Terms and Conditions</p>
+            <hr class="border border-black border-dashed" />
+          </div>
+          <div>
+            <p class="text-gray-500">Cancellation Policy</p>
+            <hr class="border border-black border-dashed" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer></footer>
+    <section class="container mx-auto">
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="btn" onclick="my_modal_2.showModal()">open modal</button>
+      <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+          <div class="text-center">
+
+            <img class="flex" src="./images/success.png" alt="">
+            <h1 class="uppercase text-green-500">Success</h1>
+            <p class="font-bold text-lgpy-4">Thank you for Booking Our Bus Seats. 
+              We are working hard to find the best service and deals for you. 
+              Shortly you will find a confirmation in your email.</p>
+              <button class="btn btn-success">Success</button>
+          </div>
+          
+         
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </section>
+
+    <footer class="p-10 bg-black ">
+       
+       <div class="flex justify-around items-center gap-2">
+        <div>
+
+          <h1 class="ralewayFont text-4xl text-white font-extrabold">P-Ticket</h1>
+          <p class="font-bold text-gray-500">P-Ticket is a digital platform to make your daily commuting better.</p>
+        </div>
+
+        <div>
+
+          <p class="font-bold text-white text-2xl">Download our app</p>
+          <div class="flex justify-center items-center border border-gray-500 rounded-2xl p-4 mt-2">
+
+            <img src="./images/playstore.png" alt="">
+            <div>
+              <span class="uppercase font-bold text-white">get it on</span>
+              <br>
+              <span class="font-bold text-white text-2xl">Google Play</span>
+            </div>
+          </div>
+          
+        </div>
+       </div>
+
+       <div class="border-dashed border border-gray-200 mt-5 mb-4">
+        <hr>
+       </div>
+
+       <div class="flex justify-between items-center">
+        <p class="font-medium text-white">@all rights reserved, P-Ticket services limited.2024</p>
+
+        <div class="flex justify-around items-center gap-8">
+          <p class="font-extralight text-white">Terms & condition</p>
+          <p class="font-extralight text-white">Return & refund policy</p>
+          <p class="font-extralight text-white">Privacy policy</p>
+        </div>
+       </div>
+      
+        
+    </footer>
+
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/utility.js"></script>
   </body>
 </html>
