@@ -1,4 +1,3 @@
-
 const buttons = document.querySelectorAll('.seat');
 
 let seatCount = 0;
